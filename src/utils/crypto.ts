@@ -13,8 +13,13 @@ export const encryptData = (data: any): string => {
  * Decrypts data received from backend (final decryption)
  */
 export const decryptData = (cipherText: string): any => {
-  const bytes = CryptoJS.AES.decrypt(cipherText, SECRET_KEY);
-  const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
-  if (!decryptedData) return null;
-  return JSON.parse(decryptedData);
+  try {
+    const bytes = CryptoJS.AES.decrypt(cipherText, SECRET_KEY);
+    const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+    if (!decryptedData) return { error: 'Decryption failed' };
+    return JSON.parse(decryptedData);
+  } catch (error) {
+    console.error('Frontend Decryption Error:', error);
+    return { error: 'Malformed data' };
+  }
 };
