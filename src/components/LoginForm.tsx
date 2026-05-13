@@ -1,5 +1,5 @@
-import { useState, FC } from 'react';
-import { useForm } from 'react-hook-form';
+import { useState, type FC } from 'react';
+import { type FieldValues, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { loginStudentApi } from '../services/api';
 import toast from 'react-hot-toast';

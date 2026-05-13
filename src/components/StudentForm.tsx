@@ -1,4 +1,4 @@
-import { useEffect, FC } from 'react';
+import { useEffect, type FC } from 'react';
 import { useForm } from 'react-hook-form';
 import type { Student } from '../types/student';
 import { registerStudentApi, updateStudentApi } from '../services/api';

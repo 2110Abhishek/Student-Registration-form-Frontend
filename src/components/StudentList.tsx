@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { type FC } from 'react';
 import type { Student } from '../types/student';
 import { deleteStudentApi } from '../services/api';
 import toast from 'react-hot-toast';
