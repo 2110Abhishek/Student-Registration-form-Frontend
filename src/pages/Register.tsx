@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import type { Student } from '../types/student';
@@ -6,7 +6,7 @@ import { registerStudentApi } from '../services/api';
 import toast from 'react-hot-toast';
 import { UserPlus, ArrowLeft } from 'lucide-react';
 
-const Register: React.FC = () => {
+const Register: FC = () => {
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<Student>();
   const navigate = useNavigate();
 

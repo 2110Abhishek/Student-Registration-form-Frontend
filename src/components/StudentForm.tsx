@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect, FC } from 'react';
 import { useForm } from 'react-hook-form';
 import type { Student } from '../types/student';
 import { registerStudentApi, updateStudentApi } from '../services/api';
@@ -11,7 +11,7 @@ interface StudentFormProps {
   initialData?: Student | null;
 }
 
-const StudentForm: React.FC<StudentFormProps> = ({ onSuccess, onCancel, initialData }) => {
+const StudentForm: FC<StudentFormProps> = ({ onSuccess, onCancel, initialData }) => {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<Student>({
     defaultValues: initialData || {}
   });

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getStudentsApi } from '../services/api';
 import type { Student } from '../types/student';
@@ -7,7 +7,7 @@ import StudentForm from '../components/StudentForm';
 import { UserPlus, LogOut, LayoutDashboard, ShieldCheck, Users, GraduationCap, Search, Filter, ChevronLeft, ChevronRight } from 'lucide-react';
 import toast from 'react-hot-toast';
 
-const Dashboard: React.FC = () => {
+const Dashboard: FC = () => {
   const [students, setStudents] = useState<Student[]>([]);
   const [filteredStudents, setFilteredStudents] = useState<Student[]>([]);
   const [loading, setLoading] = useState(true);

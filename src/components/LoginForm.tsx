@@ -1,12 +1,12 @@
-import React from 'react';
+import { useState, FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { loginStudentApi } from '../services/api';
 import toast from 'react-hot-toast';
 import { LogIn, Eye, EyeOff, Loader2 } from 'lucide-react';
 
-const LoginForm: React.FC = () => {
-  const [showPassword, setShowPassword] = React.useState(false);
+const LoginForm: FC = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
   const navigate = useNavigate();
 

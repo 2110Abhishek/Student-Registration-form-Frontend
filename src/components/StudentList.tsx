@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import type { Student } from '../types/student';
 import { deleteStudentApi } from '../services/api';
 import toast from 'react-hot-toast';
@@ -11,7 +11,7 @@ interface StudentListProps {
   loading: boolean;
 }
 
-const StudentList: React.FC<StudentListProps> = ({ students, onUpdate, onDelete, loading }) => {
+const StudentList: FC<StudentListProps> = ({ students, onUpdate, onDelete, loading }) => {
   const handleDelete = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this student?')) {
       try {
